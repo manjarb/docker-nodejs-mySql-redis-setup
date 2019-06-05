@@ -1,0 +1,32 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "dev": "cross-env NODE_ENV=development MEM_MON=close nodemon --watch scripts --watch dist dist/script/dev.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.7.0",
+    "koa-body": "^4.1.0",
+    "koa-generic-session": "^2.0.1",
+    "koa-logger": "^3.2.0",
+    "koa-redis": "^4.0.0",
+    "koa-router": "^7.4.0",
+    "koa-send": "^5.0.0",
+    "koa-static": "^5.0.0",
+    "koa2-connect": "^1.0.2",
+    "redis": "^2.8.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "nodemon": "^1.19.1",
+    "nyc": "^14.1.1",
+    "pm2": "^3.5.1",
+    "typescript": "^3.5.1"
+  }
+}
