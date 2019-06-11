@@ -2,11 +2,34 @@ version: '3'
 
 services:
   redis:
-    image: 'redis:3.2-alpine'
+    image: 'redis:5.0.3-alpine'
     ports:
       - '6379:6379'
     volumes:
       - 'redis:/data'
+    networks:
+      - back-tier
+
+  db:
+    image: mysql:5.7.12
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'db'
+      # So you don't have to use root, but you can if you like
+      MYSQL_USER: 'root'
+      # You can use whatever password you like
+      MYSQL_PASSWORD: '11501112'
+      # Password for root access
+      MYSQL_ROOT_PASSWORD: '11501112'
+    ports:
+      # <Port exposed> : < MySQL Port running inside container>
+      - '3306:3306'
+    expose:
+      # Opens port 3306 on the container
+      - '3306'
+    # Where our data will be persisted
+    volumes:
+      - db-data:/var/lib/mysql
 
   web:
     build: './nodejs'
@@ -19,9 +42,13 @@ services:
       - '80:8000'
     volumes:
       - './nodejs:/app'
+    networks:
+      - front-tier
+      - back-tier
 
 volumes:
   redis: {  }
+  db-data:
 
 networks:
   front-tier:
