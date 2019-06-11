@@ -11,17 +11,19 @@ const logging = process.env.NODE_ENV === 'development'
     }
     : console.log('Sequelize non development')
 
-const sequelize: Sequelize = new Sequelize({
-    database: config.db.database,
+
+const sequelize: Sequelize = new Sequelize(config.db.database, config.db.username, config.db.password, {
+    // database: config.db.database,
     dialect: config.db.dialect,
-    username: config.db.username,
-    password: config.db.password,
+    // username: config.db.username,
+    // password: config.db.password,
     host: config.db.host,
     port: config.db.port,
     pool: config.db.pool
 })
 
 export const dbConnect = () => {
+    sequelize.addModels([__dirname + '/instances'])
     sequelize.authenticate()
         .then((res) => {
             console.log('-------------------------------------')
