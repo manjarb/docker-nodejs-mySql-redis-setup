@@ -21,6 +21,6 @@ export default {
         logging: true
     },
     redis: {
-        host: ''
+        host: '127.0.0.1'
     }
 }
