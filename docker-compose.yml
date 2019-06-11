@@ -30,6 +30,8 @@ services:
     # Where our data will be persisted
     volumes:
       - db-data:/var/lib/mysql
+    networks:
+      - back-tier
 
   web:
     build: './nodejs'
@@ -45,6 +47,9 @@ services:
     networks:
       - front-tier
       - back-tier
+    depends_on:
+      - redis
+      - db
 
 volumes:
   redis: {  }
