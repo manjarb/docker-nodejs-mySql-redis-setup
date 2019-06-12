@@ -1,0 +1,21 @@
+{
+  "name": "hsbc-net-docker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compose:up": "docker-compose up --build",
+    "compose:background": "docker-compose up -d --build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manjarb/docker-nodejs-mySql-redis-setup.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manjarb/docker-nodejs-mySql-redis-setup/issues"
+  },
+  "homepage": "https://github.com/manjarb/docker-nodejs-mySql-redis-setup#readme"
+}
