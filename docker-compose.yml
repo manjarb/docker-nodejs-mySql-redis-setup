@@ -52,7 +52,7 @@ services:
       - db
 
 volumes:
-  redis: {  }
+  redis:
   db-data:
 
 networks:

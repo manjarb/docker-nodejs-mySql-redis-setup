@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compose:up": "docker-compose up --build",
-    "compose:background": "docker-compose up -d --build"
+    "compose:background": "docker-compose up -d --build",
+    "compose:down": "docker-compose down -v",
+    "gke:version-list": "gcloud container get-server-config --region=asia-east1"
   },
   "repository": {
     "type": "git",
