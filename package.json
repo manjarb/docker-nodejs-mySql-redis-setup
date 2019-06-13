@@ -10,7 +10,7 @@
     "compose:background": "docker-compose up -d --build",
     "compose:down": "docker-compose down -v",
     "gke:version-list": "gcloud container get-server-config --region=asia-east1",
-    "shell:web": "docker exec -it docker-nodejs-mysql-redis-setup_web_1 /bin/sh"
+    "shell:web": "docker exec -it docker-nodejs-mysql-redis-setup_web_1 /bin/bash"
   },
   "repository": {
     "type": "git",
