@@ -12,7 +12,6 @@ services:
 
   db:
     image: mysql:5.7.12
-    command: apt-get update && apt-get install bash
     restart: always
     environment:
       MYSQL_DATABASE: 'db'
@@ -36,8 +35,6 @@ services:
 
   web:
     build: './nodejs'
-    depends_on:
-      - 'redis'
     env_file: 
       - '.env'
     ports:
