@@ -13,4 +13,5 @@ COPY . .
 
 LABEL maintainer="Varis Darasirikul"
 
+CMD npm run build
 CMD npm run dev
