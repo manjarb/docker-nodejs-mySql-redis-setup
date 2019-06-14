@@ -10,7 +10,7 @@ export default {
         dialect: "mysql",
         host: 'db',
         port: 3306,
-        username: 'root',
+        username: 'test',
         password: '11501112',
         database: 'hsbcnet_testing',
         pool: {

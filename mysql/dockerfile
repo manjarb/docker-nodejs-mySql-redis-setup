@@ -1,0 +1,10 @@
+FROM mysql:5.7.12
+
+MAINTAINER Varis Darasirikul
+
+# ADD init_db.sh /tmp/init_db.sh
+# RUN chmod 700 /tmp/init_db.sh
+
+# ADD schema.sql /tmp/schema.sql
+
+# RUN /tmp/init_db.sh
